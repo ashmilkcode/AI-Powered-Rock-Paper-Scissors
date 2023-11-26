@@ -40,3 +40,14 @@ confidence_score = prediction[0][index]
 # Print prediction and confidence score
 print("Class:", class_name[2:], end="")
 print("Confidence Score:", confidence_score)
+
+# Make a prediction
+result = model.predict(input_data)
+
+# Determine the result based on the prediction
+if result[0][0] > result[0][1] and result[0][0] > result[0][2]:
+    print("Rock")
+elif result[0][1] > result[0][0] and result[0][1] > result[0][2]:
+    print("Paper")
+else:
+    print("Scissors")
